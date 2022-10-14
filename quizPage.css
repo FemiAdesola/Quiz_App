@@ -50,3 +50,19 @@
 .displayQuestion-main-text {
   text-align: center;
 }
+
+
+/* ####### Progress Bar ###### */
+
+#progressBar {
+  width: 200px;
+  height: 42px;
+  border: 2.5px solid var(--bg-color-2);
+  margin-top: 1.5rem;
+}
+
+#progressFull {
+  height: 35px;
+  background-color: var(--correct);
+  width: 0%;
+}
