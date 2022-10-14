@@ -8,4 +8,5 @@ topPointList.innerHTML = topPoints
   })
   .join("");
 
-  console.log(topPointList)
+console.log(topPointList)
+  

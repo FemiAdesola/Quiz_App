@@ -14,10 +14,8 @@ const topPoints = JSON.parse(localStorage.getItem('topPoints')) || [];
 
 const MAX_TOP_POINTS = 5;
 
-
 const saveTopPoint = (e) => {
     e.preventDefault();
-
     // get top point in local storage 
     const point = {
         // point: Math.floor(Math.random()*100),

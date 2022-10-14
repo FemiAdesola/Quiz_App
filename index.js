@@ -29,7 +29,6 @@ fetch(
         return res.json();
     })
     .then((getQuestions) => {
-         // questions = getQuestions;
         // To format the original question to the needed questions
         questions = getQuestions.results.map((getQuestion) => {
             const selectedQuestion = {
@@ -51,7 +50,6 @@ fetch(
             return selectedQuestion;
         });
         startQuiz();
-         // console.log(getQuestions.results)
     })
     .catch((err) => {
         console.error(err);
@@ -80,7 +78,7 @@ const getNewQuestion = () => {
         // for local storage
         localStorage.setItem("RecentPoint", point);
         //
-        return window.location.assign('/complete.html');
+        return window.location.assign('/completed/complete.html');
     }
     //
     questionCounter++;
@@ -131,8 +129,6 @@ choices.forEach((option) => {
         selectedChoice.parentElement.classList.remove(classToApply);
         getNewQuestion();
         }, 1000);
-
-        console.log(selectedAnswer==currentQuestion.answer)
     });
 });
 
@@ -141,12 +137,3 @@ const incrementScore = num => {
   point += num;
   pointText.innerText = point;
 };
-
-
-// startQuiz()
-
-
-   // const classToApply = "incorrect";
-        // if (selectedAnswer == currentQuestion.answer) {
-        //     classToApply = "correct"
-        // };
