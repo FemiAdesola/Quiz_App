@@ -51,7 +51,40 @@ const startQuiz = () => {
     questionCounter = 0;
     point = 0;
     availableQuesions = [...questions];
-   
+    getNewQuestion();
 };
+
+const getNewQuestion = () => {
+    // For ending the quiz when quiz is end
+    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        return window.location.assign('/end.html');
+    }
+    //
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+    currentQuestion = availableQuesions[questionIndex];
+    question.innerText = currentQuestion.question;
+
+    choices.forEach((choice) => {
+        const option = choice.dataset['option'];
+        choice.innerText = currentQuestion['choice' + option];
+    });
+
+    availableQuesions.splice(questionIndex, 1);
+    acceptingAnswers = true;
+};
+
+choices.forEach((option) => {
+    option.addEventListener('click', (e) => {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['option'];
+        
+        getNewQuestion();
+        console.log(selectedAnswer==currentQuestion.answer)
+    });
+});
 
 startQuiz()
