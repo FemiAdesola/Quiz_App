@@ -9,6 +9,11 @@ const pointText = document.getElementById("point");
 // progress bar
 const progressFull = document.getElementById("progressFull");
 // 
+
+// For loader
+const loader = document.getElementById("loader");
+const quiz= document.getElementById("quiz");
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let point = 0;
@@ -62,6 +67,10 @@ const startQuiz = () => {
     point = 0;
     availableQuesions = [...questions];
     getNewQuestion();
+
+      // loader
+    quiz.classList.remove("hidden");
+    loader.classList.add("hidden");
 };
 
 const getNewQuestion = () => {

@@ -66,3 +66,26 @@
   background-color: var(--correct);
   width: 0%;
 }
+
+/* ###### Loader ###### */
+/* LOADER */
+#loader {
+  border: 15px solid var(--color-4);
+  border-radius: 50%;
+  border-top: 15px solid var(--color-2);
+  width: 120px;
+  height: 120px;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
