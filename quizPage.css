@@ -24,3 +24,14 @@
   padding: 15px;
   width: 100%;
 }
+
+
+/* #### For the answer #### */
+
+.correct{
+  background-color:var(--correct);
+}
+
+.incorrect{
+  background-color:var(--incorrect);
+}

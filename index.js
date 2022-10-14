@@ -81,8 +81,24 @@ choices.forEach((option) => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['option'];
+
+        const classToApply =
+            selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
         
+        // const classToApply = "incorrect";
+        // if (selectedAnswer == currentQuestion.answer) {
+        //     classToApply = "correct"
+        // };
+        
+        // for adding css to classToApply
+        selectedChoice.parentElement.classList.add(classToApply);
+       
+        // to set time to wait for a while before moving to next question 
+        setTimeout(() => {
+        selectedChoice.parentElement.classList.remove(classToApply);
         getNewQuestion();
+        }, 1000);
+
         console.log(selectedAnswer==currentQuestion.answer)
     });
 });

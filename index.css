@@ -20,6 +20,9 @@
     --color-5:#1b3350;
     --color-6:#213c26;
 
+    --correct:#247c24;
+    --incorrect:#f70d0d;
+
     --font-1:"Open Sans", sans-serif;
     --font-2:"Lato", sans-serif;
     --font-3: 'Caveat', cursive;
