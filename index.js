@@ -17,22 +17,45 @@ let availableQuesions = [];
 
 let questions = [];
 
-// fetch method
-fetch("questions.json")
+fetch(
+     'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+)
     .then((res) => {
         return res.json();
     })
     .then((getQuestions) => {
-        questions = getQuestions;
+         // questions = getQuestions;
+        // To format the original question to the needed questions
+        questions = getQuestions.results.map((getQuestion) => {
+            const selectedQuestion = {
+                question: getQuestion.question,
+            };
+
+            const rightAnswer = [...getQuestion.incorrect_answers];// incorrect_answers for API
+            selectedQuestion.answer = Math.floor(Math.random() * 5) + 1;
+            rightAnswer.splice(
+                selectedQuestion.answer - 1,
+                0,
+                getQuestion.correct_answer
+            );
+
+            rightAnswer.forEach((point, index) => {
+                selectedQuestion['choice' + (index + 1)] = point;
+            });
+
+            return selectedQuestion;
+        });
         startQuiz();
+         // console.log(getQuestions.results)
     })
-    .catch((error) => {
-        console.error(error);
+    .catch((err) => {
+        console.error(err);
     });
+
 
 // point
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 5;
 
 const startQuiz = () => {
     questionCounter = 0;
