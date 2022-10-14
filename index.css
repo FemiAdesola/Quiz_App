@@ -9,15 +9,16 @@
 
 :root{
     --bg-color-1:#162639;
-    --bg-color-2:#5e8eca;
-    --bg-color-3:#C8F6F9;
-     --bg-color-3:#ecf5ff;
+    --bg-color-2:#103663;
+    --bg-color-3:#ecf5ff;
+    --bg-color-4:#2a4d4f;
 
     --color-1:#162639;
     --color-2:#c4c4c4;
     --color-3:#dedede;
     --color-4:#FFFFFF;
     --color-5:#1b3350;
+    --color-6:#213c26;
 
     --font-1:"Open Sans", sans-serif;
     --font-2:"Lato", sans-serif;
@@ -37,7 +38,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
