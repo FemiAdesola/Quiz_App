@@ -28,10 +28,25 @@
 
 /* #### For the answer #### */
 
-.correct{
+.right{
   background-color:var(--correct);
 }
 
-.incorrect{
+.wrong{
   background-color:var(--incorrect);
+}
+
+/* ######## displayQuestion ########*/
+#displayQuestion {
+  display: flex;
+  justify-content: space-between;
+}
+
+.displayQuestion-prefix {
+  text-align: center;
+  font-size: 20px;
+}
+
+.displayQuestion-main-text {
+  text-align: center;
 }

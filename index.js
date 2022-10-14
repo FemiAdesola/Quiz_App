@@ -3,6 +3,10 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("option-text"));
 
+const questionCounterText = document.getElementById("questionCounter");
+const pointText = document.getElementById("point");
+
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let point = 0;
@@ -61,6 +65,10 @@ const getNewQuestion = () => {
     }
     //
     questionCounter++;
+
+    // for question display 
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
+    //
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -83,14 +91,15 @@ choices.forEach((option) => {
         const selectedAnswer = selectedChoice.dataset['option'];
 
         const classToApply =
-            selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+            selectedAnswer == currentQuestion.answer ?
+                "right" : "wrong";
         
-        // const classToApply = "incorrect";
-        // if (selectedAnswer == currentQuestion.answer) {
-        //     classToApply = "correct"
-        // };
-        
-        // for adding css to classToApply
+           // For adding point
+            if (classToApply == 'right') {
+                incrementScore(CORRECT_BONUS) 
+            }
+    
+        // for adding css to option selected either right or wrong
         selectedChoice.parentElement.classList.add(classToApply);
        
         // to set time to wait for a while before moving to next question 
@@ -103,4 +112,17 @@ choices.forEach((option) => {
     });
 });
 
+// for point incremental the point
+const incrementScore = num => {
+  point += num;
+  pointText.innerText = point;
+};
+
+
 startQuiz()
+
+
+   // const classToApply = "incorrect";
+        // if (selectedAnswer == currentQuestion.answer) {
+        //     classToApply = "correct"
+        // };
