@@ -57,7 +57,7 @@
 #progressBar {
   width: 200px;
   height: 42px;
-  border: 2.5px solid var(--bg-color-2);
+  border: 2.5px solid var(--color-2);
   margin-top: 1.5rem;
 }
 

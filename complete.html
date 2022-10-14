@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Completed!</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="complete.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="completed" class="flex-cen flex-col">
+        <h1 id="finalPoint"></h1>
+        <form>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter your name"
+          />
+          <button
+            type="submit"
+            class="btn"
+            id="savePointBtn"
+            onclick="saveTopPoint(event)"
+            disabled
+          >
+            Save
+          </button>
+        </form>
+        <a class="btn" href="/quizPage.html">Start again</a>
+        <a class="btn" href="/">Go Home</a>
+      </div>
+    </div>
+    <script src="complete.js"></script>
+  </body>
+</html>

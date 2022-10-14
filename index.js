@@ -6,7 +6,6 @@ const choices = Array.from(document.getElementsByClassName("option-text"));
 const questionCounterText = document.getElementById("progressText");
 const pointText = document.getElementById("point");
 
-
 // progress bar
 const progressFull = document.getElementById("progressFull");
 // 
@@ -64,7 +63,11 @@ const startQuiz = () => {
 const getNewQuestion = () => {
     // For ending the quiz when quiz is end
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        return window.location.assign('/end.html');
+
+        // for local storage
+        localStorage.setItem("RecentPoint", point);
+        //
+        return window.location.assign('/complete.html');
     }
     //
     questionCounter++;
@@ -103,7 +106,7 @@ choices.forEach((option) => {
                 "right" : "wrong";
         
            // For adding point
-            if (classToApply == 'right') {
+            if (classToApply === 'right') {
                 incrementScore(CORRECT_BONUS) 
             }
     

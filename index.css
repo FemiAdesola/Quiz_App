@@ -19,6 +19,8 @@
     --color-4:#FFFFFF;
     --color-5:#1b3350;
     --color-6:#213c26;
+    --color-7:#aaaaaa;
+ 
 
     --correct:#247c24;
     --incorrect:#f70d0d;
@@ -101,7 +103,7 @@ h3{
   padding: 10px 0;
   width: 200px;
   text-align: center;
-  border: 1px solid var(--color-5);
+  border: 1px solid var(--color-2);
   margin-bottom: 10px;
   text-decoration: none;
   color: var(--color-5);
