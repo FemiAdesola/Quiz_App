@@ -1,4 +1,4 @@
-.choice-container {
+.option-container {
   display: flex;
   margin-bottom: 5px;
   width: 100%;
@@ -7,19 +7,20 @@
   background-color: var(--bg-color-2);
 }
 
-.choice-container:hover {
+.option-container:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 var(--color-6);
   transform: translateY(-0.1rem);
   transition: transform 150ms;
 }
 
-.choice-prefix {
+.option-prefix {
   padding: 15px 25px;
   background-color: var(--bg-color-4);
   color: var(--color-4);
 }
 
-.choice-text {
+.option-text {
   padding: 15px;
+  width: 100%;
 }
