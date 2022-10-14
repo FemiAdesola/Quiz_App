@@ -10,7 +10,7 @@ username.addEventListener('keyup', () => {
     savePointBtn.disabled = !username.value;
 });
 
-const topPoints = JSON.parse(localStorage.getItem('topPoint')) || [];
+const topPoints = JSON.parse(localStorage.getItem('topPoints')) || [];
 
 const MAX_TOP_POINTS = 5;
 
@@ -20,8 +20,8 @@ const saveTopPoint = (e) => {
 
     // get top point in local storage 
     const point = {
-        point: Math.floor(Math.random()*100),
-    //    point: RecentPoint,
+        // point: Math.floor(Math.random()*100),
+       point: RecentPoint,
         name: username.value,
     };
     topPoints.push(point);
@@ -29,6 +29,6 @@ const saveTopPoint = (e) => {
     topPoints.sort((a, b) => b.point - a.point); // For sorting from higher point to lower point 
     topPoints.splice(5); // For stopping score at max of 5 people
 
-    localStorage.setItem('topPoint', JSON.stringify(topPoints));
+    localStorage.setItem('topPoints', JSON.stringify(topPoints));
     window.location.assign('/');
 };

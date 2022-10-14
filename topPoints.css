@@ -1,0 +1,14 @@
+#topPointList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+.topPoint {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.topPoint:hover {
+  transform: scale(1.025);
+}
