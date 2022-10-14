@@ -78,7 +78,7 @@ const getNewQuestion = () => {
         // for local storage
         localStorage.setItem("RecentPoint", point);
         //
-        return window.location.assign('/completed/complete.html');
+        return window.location.assign('/complete.html');
     }
     //
     questionCounter++;
