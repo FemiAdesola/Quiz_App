@@ -1,5 +1,6 @@
 ## Quiz App
 - This is an quiz app built with vanila Javascript, CSS and HTML
+- Click to [check](https://femi-quiz-app.netlify.app/) the App
 
 ## Question from 
 
